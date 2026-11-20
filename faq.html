@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ – Emberwell Saunas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="index.html">Emberwell Saunas</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav-links" id="site-nav" aria-label="Main">
+        <a href="index.html#saunas">Our saunas</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#prices">Prices</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="mailto:hello@emberwell.example">Book a sauna</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="faq">
+      <div class="container">
+        <h1>FAQ</h1>
+        <div class="faq-list">
+          <details>
+            <summary>How much space do we need?</summary>
+            <p>A flat spot about 3 metres by 5 metres, within 20 metres of where our van can park.</p>
+          </details>
+          <details>
+            <summary>Do we need to bring anything?</summary>
+            <p>Just swimwear and a towel. Firewood, kindling and a fire blanket come with every hire, and you can add our towel bundle.</p>
+          </details>
+          <details>
+            <summary>How hot does it get?</summary>
+            <p>Between 70 and 90 degrees. You can open the vent or the door to cool it down at any time.</p>
+          </details>
+          <details>
+            <summary>Can we use it on the beach?</summary>
+            <p>Yes, on any beach in Kestrel Bay where vehicles are allowed. We check the tide times with you before we come.</p>
+          </details>
+          <details>
+            <summary>What happens if the weather is bad?</summary>
+            <p>Saunas are made for cold, wet days. If there's a storm warning, we'll move your hire to another day for free.</p>
+          </details>
+          <details>
+            <summary>How do we pay?</summary>
+            <p>A 25% deposit books your date. The rest is due 14 days before your hire.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <p class="footer-logo">Emberwell Saunas</p>
+      <address>
+        The Boathouse Yard, 2 Slipway Road, Kestrel Bay KB4 1SW<br>
+        <a href="tel:01632960418">01632 960418</a> · <a href="mailto:hello@emberwell.example">hello@emberwell.example</a>
+      </address>
+      <p>© 2027 Emberwell Saunas</p>
+    </div>
+  </footer>
+  <script>
+    // Phone menu toggle. Without JavaScript the links stay visible.
+    (function () {
+      document.documentElement.classList.add('js');
+      var button = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('site-nav');
+      button.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function (event) {
+        if (event.target.tagName === 'A') {
+          nav.classList.remove('is-open');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
