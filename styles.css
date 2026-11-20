@@ -317,6 +317,14 @@ section h2 { font-size: 36px; }
   padding: 0 0 20px;
   line-height: 1.55;
 }
+.faq-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+  margin-top: 28px;
+}
+.faq-cta a:not(.btn) { color: var(--ember); font-weight: 700; white-space: nowrap; }
 
 /* Footer */
 .site-footer {
