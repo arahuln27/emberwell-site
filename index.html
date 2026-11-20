@@ -11,7 +11,8 @@
   <header class="site-header">
     <div class="container nav">
       <a class="logo" href="#top">Emberwell Saunas</a>
-      <nav class="nav-links" aria-label="Main">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav class="nav-links" id="site-nav" aria-label="Main">
         <a href="#saunas">Our saunas</a>
         <a href="#how">How it works</a>
         <a href="#prices">Prices</a>
@@ -124,5 +125,23 @@
       <p>© 2027 Emberwell Saunas</p>
     </div>
   </footer>
+  <script>
+    // Phone menu toggle. Without JavaScript the links stay visible.
+    (function () {
+      document.documentElement.classList.add('js');
+      var button = document.querySelector('.menu-toggle');
+      var nav = document.getElementById('site-nav');
+      button.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        button.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function (event) {
+        if (event.target.tagName === 'A') {
+          nav.classList.remove('is-open');
+          button.setAttribute('aria-expanded', 'false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
